@@ -1,0 +1,20 @@
+apiVersion: blog.core.deploymentcontroller.io/v1
+kind: Configuration
+metadata:
+  labels:
+    app.kubernetes.io/name: configuration
+    app.kubernetes.io/instance: configuration-sample
+    app.kubernetes.io/part-of: deployment-controller
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: deployment-controller
+  name: configuration-sample
+spec:
+  type: "foo"
+  setting:  "default"
+  apps:
+    - name: app1
+      errorThreshold: 5
+    - name: app2
+      errorThreshold: 10
+    - name: app3
+      errorThreshold: 3
